@@ -1,0 +1,11 @@
+flowchart LR
+    A[Lab AWS Account] --> B[IAM Users and Roles]
+    A --> C[Security Groups]
+    A --> D[CloudTrail]
+    B --> D
+    C --> D
+    D --> E[S3 CloudTrail Logs]
+    E --> F[Local Exported JSON Files]
+    F --> G[Python Cloud Security Monitor]
+    G --> H[Review Table and Optional CSV]
+

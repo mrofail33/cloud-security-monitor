@@ -1,0 +1,11 @@
+INFO: Scanning 1 CloudTrail file(s).
+| Time     | Event                   | User      | Flag   |
+| -------- | ----------------------- | --------- | ------ |
+| 10:42:00 | Login or API failure    | test-user | Review |
+| 11:03:00 | IAM permission changed  | admin     | Review |
+| 11:30:00 | Security group changed  | admin     | Review |
+| 11:45:00 | IAM user created        | admin     | Review |
+| 12:05:00 | Access key changed      | admin     | Review |
+| 12:15:00 | CloudTrail admin action | admin     | Review |
+INFO: Found 6 event(s) flagged for review.
+

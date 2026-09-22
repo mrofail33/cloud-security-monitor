@@ -1,0 +1,126 @@
+{
+  "Records": [
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "test-user",
+        "arn": "arn:aws:iam::123456789012:user/test-user"
+      },
+      "eventTime": "2026-09-22T10:42:00Z",
+      "eventSource": "signin.amazonaws.com",
+      "eventName": "ConsoleLogin",
+      "awsRegion": "us-east-1",
+      "sourceIPAddress": "203.0.113.10",
+      "responseElements": {
+        "ConsoleLogin": "Failure"
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "admin",
+        "arn": "arn:aws:iam::123456789012:user/admin"
+      },
+      "eventTime": "2026-09-22T11:03:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "PutUserPolicy",
+      "awsRegion": "us-east-1",
+      "requestParameters": {
+        "userName": "test-user",
+        "policyName": "LabInlinePolicy"
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "admin",
+        "arn": "arn:aws:iam::123456789012:user/admin"
+      },
+      "eventTime": "2026-09-22T11:30:00Z",
+      "eventSource": "ec2.amazonaws.com",
+      "eventName": "AuthorizeSecurityGroupIngress",
+      "awsRegion": "us-east-1",
+      "requestParameters": {
+        "groupId": "sg-0123456789abcdef0",
+        "ipPermissions": [
+          {
+            "fromPort": 22,
+            "toPort": 22,
+            "ipProtocol": "tcp",
+            "ipRanges": [
+              {
+                "cidrIp": "203.0.113.0/24"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "admin",
+        "arn": "arn:aws:iam::123456789012:user/admin"
+      },
+      "eventTime": "2026-09-22T11:45:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateUser",
+      "awsRegion": "us-east-1",
+      "requestParameters": {
+        "userName": "new-lab-user"
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "admin",
+        "arn": "arn:aws:iam::123456789012:user/admin"
+      },
+      "eventTime": "2026-09-22T12:05:00Z",
+      "eventSource": "iam.amazonaws.com",
+      "eventName": "CreateAccessKey",
+      "awsRegion": "us-east-1",
+      "requestParameters": {
+        "userName": "test-user"
+      },
+      "responseElements": {
+        "accessKey": {
+          "accessKeyId": "AKIAIOSFODNN7EXAMPLE"
+        }
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "admin",
+        "arn": "arn:aws:iam::123456789012:user/admin"
+      },
+      "eventTime": "2026-09-22T12:15:00Z",
+      "eventSource": "cloudtrail.amazonaws.com",
+      "eventName": "StopLogging",
+      "awsRegion": "us-east-1",
+      "requestParameters": {
+        "trailName": "lab-cloudtrail"
+      }
+    },
+    {
+      "eventVersion": "1.08",
+      "userIdentity": {
+        "type": "IAMUser",
+        "userName": "developer",
+        "arn": "arn:aws:iam::123456789012:user/developer"
+      },
+      "eventTime": "2026-09-22T12:30:00Z",
+      "eventSource": "s3.amazonaws.com",
+      "eventName": "ListBuckets",
+      "awsRegion": "us-east-1"
+    }
+  ]
+}
+
