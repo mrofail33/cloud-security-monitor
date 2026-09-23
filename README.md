@@ -132,3 +132,18 @@ Built a Python CloudTrail monitoring lab that parses AWS activity logs and flags
 ## Limitations
 
 This project is intentionally simple. It does not perform real-time alerting, anomaly detection, threat intelligence matching, automated remediation, or production-scale log ingestion. It is best described as a CloudTrail parsing and detection lab.
+
+## Interview Proof
+
+The repo includes:
+
+- safe sample CloudTrail data in `samples/`
+- unit tests in `tests/`
+- CI in `.github/workflows/ci.yml`
+- a detection matrix in `docs/detection-matrix.md`
+- an AWS lab deployment plan in `docs/aws-lab-runbook.md`
+- a claim-boundary guide in `docs/security-portfolio-boundary.md`
+
+Safe resume wording:
+
+> Built a Python CloudTrail monitoring lab that scans local AWS activity logs and flags failed authentication, IAM changes, security-group updates, access-key changes, and CloudTrail administrative actions.
