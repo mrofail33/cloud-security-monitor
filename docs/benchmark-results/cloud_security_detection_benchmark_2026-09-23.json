@@ -1,0 +1,67 @@
+{
+  "benchmark_date": "2026-09-23",
+  "input": "samples\\cloudtrail_sample.json",
+  "records_scanned": 7,
+  "detection_rule_groups": 6,
+  "enumerated_event_names": {
+    "failed_authentication_error_codes": "see cloud_security_monitor/detections.py FAILED_AUTH_ERROR_CODES",
+    "iam_user_creation": [
+      "CreateUser"
+    ],
+    "iam_policy_changes": [
+      "AddUserToGroup",
+      "AttachGroupPolicy",
+      "AttachRolePolicy",
+      "AttachUserPolicy",
+      "CreateGroup",
+      "CreatePolicy",
+      "CreatePolicyVersion",
+      "DeleteGroupPolicy",
+      "DeletePolicy",
+      "DeletePolicyVersion",
+      "DetachGroupPolicy",
+      "DetachRolePolicy",
+      "DetachUserPolicy",
+      "PutGroupPolicy",
+      "PutRolePolicy",
+      "PutUserPolicy",
+      "SetDefaultPolicyVersion"
+    ],
+    "security_group_changes": [
+      "AuthorizeSecurityGroupEgress",
+      "AuthorizeSecurityGroupIngress",
+      "CreateSecurityGroup",
+      "DeleteSecurityGroup",
+      "RevokeSecurityGroupEgress",
+      "RevokeSecurityGroupIngress",
+      "UpdateSecurityGroupRuleDescriptionsEgress",
+      "UpdateSecurityGroupRuleDescriptionsIngress"
+    ],
+    "access_key_changes": [
+      "CreateAccessKey",
+      "DeleteAccessKey",
+      "UpdateAccessKey"
+    ],
+    "cloudtrail_admin_actions": [
+      "CreateTrail",
+      "DeleteTrail",
+      "StartLogging",
+      "StopLogging",
+      "UpdateTrail"
+    ]
+  },
+  "expected_flagged_events": [
+    "AuthorizeSecurityGroupIngress",
+    "ConsoleLogin",
+    "CreateAccessKey",
+    "CreateUser",
+    "PutUserPolicy",
+    "StopLogging"
+  ],
+  "detections": 6,
+  "misses": 0,
+  "missed_expected_events": [],
+  "false_positives": 0,
+  "detection_rate_on_safe_sample": 1.0,
+  "aws_lab_status": "No live AWS lab logs or credentials were present, so no AWS events were generated."
+}

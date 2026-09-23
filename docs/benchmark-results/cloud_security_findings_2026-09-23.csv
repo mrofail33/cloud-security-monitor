@@ -1,0 +1,7 @@
+time,event,user,flag,source,event_name,resource,reason
+2026-09-22T10:42:00Z,Login or API failure,test-user,Review,signin.amazonaws.com,ConsoleLogin,Unknown,A console sign-in or API request failed with an authentication or authorization error.
+2026-09-22T11:03:00Z,IAM permission changed,admin,Review,iam.amazonaws.com,PutUserPolicy,test-user,"An IAM group, role, user policy, or managed policy was changed."
+2026-09-22T11:30:00Z,Security group changed,admin,Review,ec2.amazonaws.com,AuthorizeSecurityGroupIngress,sg-0123456789abcdef0,"A security group or security group rule was created, deleted, or modified."
+2026-09-22T11:45:00Z,IAM user created,admin,Review,iam.amazonaws.com,CreateUser,new-lab-user,A new IAM user was created and should be verified in a lab account.
+2026-09-22T12:05:00Z,Access key changed,admin,Review,iam.amazonaws.com,CreateAccessKey,test-user,"An IAM access key was created, deleted, or updated."
+2026-09-22T12:15:00Z,CloudTrail admin action,admin,Review,cloudtrail.amazonaws.com,StopLogging,lab-cloudtrail,A CloudTrail configuration or logging action was performed.

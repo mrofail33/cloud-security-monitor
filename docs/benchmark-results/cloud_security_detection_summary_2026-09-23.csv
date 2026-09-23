@@ -1,0 +1,2 @@
+benchmark_date,input,records_scanned,detection_rule_groups,expected_flagged_events,detections,misses,missed_expected_events,false_positives,detection_rate_on_safe_sample,aws_lab_status
+2026-09-23,samples\cloudtrail_sample.json,7,6,"['AuthorizeSecurityGroupIngress', 'ConsoleLogin', 'CreateAccessKey', 'CreateUser', 'PutUserPolicy', 'StopLogging']",6,0,[],0,1.0,"No live AWS lab logs or credentials were present, so no AWS events were generated."

@@ -83,6 +83,22 @@ Optional CSV output:
 python -m cloud_security_monitor.monitor --input samples/cloudtrail_sample.json --csv findings.csv
 ```
 
+## Measured Detection Results
+
+Local benchmark completed on 2026-09-23 with `scripts/benchmark_detections.py` against the safe sample CloudTrail file. Raw evidence is saved in `docs/benchmark-results/`.
+
+| Records scanned | Detection rule groups | Expected detections | Misses | False positives | Detection rate |
+| ---: | ---: | ---: | ---: | ---: | ---: |
+| 7 | 6 | 6 | 0 | 0 | 100.0% |
+
+No live AWS events were generated because no AWS lab logs or credentials were present. The measured result applies only to the safe local sample data.
+
+Evidence files:
+
+- `docs/benchmark-results/cloud_security_detection_benchmark_2026-09-23.json`
+- `docs/benchmark-results/cloud_security_findings_2026-09-23.csv`
+- `docs/benchmark-results/cloud_security_detection_summary_2026-09-23.csv`
+
 ## Run Against Your Own AWS Lab Logs
 
 Use this only with an AWS account or lab environment you own or are authorized to use.
@@ -147,6 +163,10 @@ The repo includes:
 Safe resume wording:
 
 > Built a Python CloudTrail monitoring lab that scans local AWS activity logs and flags failed authentication, IAM changes, security-group updates, access-key changes, and CloudTrail administrative actions.
+
+Resume-ready quantified bullet:
+
+- Built a Python CloudTrail monitoring lab with 6 detection rule groups, detecting 6 of 6 expected events with 0 misses and 0 false positives on the safe sample log, as measured by `scripts/benchmark_detections.py`; live AWS validation remains pending until authorized lab logs or credentials are available.
 
 ## Optional SNS notification
 
