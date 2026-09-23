@@ -147,3 +147,19 @@ The repo includes:
 Safe resume wording:
 
 > Built a Python CloudTrail monitoring lab that scans local AWS activity logs and flags failed authentication, IAM changes, security-group updates, access-key changes, and CloudTrail administrative actions.
+
+## Optional SNS notification
+
+The local flow is:
+
+```text
+CloudTrail JSON -> Python detection -> optional SNS notification
+```
+
+After configuring AWS credentials and an SNS topic, send one summary notification:
+
+```bash
+python -m cloud_security_monitor.monitor --input samples/cloudtrail_sample.json --sns-topic-arn arn:aws:sns:us-east-1:123456789012:security-findings --aws-region us-east-1
+```
+
+SNS is optional so the project still runs locally without an AWS account.

@@ -12,6 +12,7 @@ Safe interview claim:
 | Security group changes | EC2 security-group events | Sample JSON and rule code | Flags network exposure changes. |
 | Access key changes | IAM access-key events | Sample JSON and rule code | Flags credential creation, deletion, or updates. |
 | CloudTrail admin actions | CloudTrail create/update/start/stop/delete events | Sample JSON and rule code | Flags changes to audit logging itself. |
+| SNS notification | Optional `--sns-topic-arn` after local scan | Unit-tested message builder and lazy boto3 publisher | Sends one review summary to SNS when AWS credentials and a topic are configured. |
 
 ## What not to claim yet
 
@@ -19,6 +20,7 @@ Safe interview claim:
 - This is not real-time monitoring.
 - This is not automated remediation.
 - This is not deployed with AWS Lambda/EventBridge yet.
+- SNS publishing is optional and requires an AWS account, valid credentials, and a topic ARN.
 
 ## Simple next upgrade
 

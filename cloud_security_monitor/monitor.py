@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 from cloud_security_monitor.detections import Finding, detect_event
+from cloud_security_monitor.sns import publish_findings
 
 
 LOGGER = logging.getLogger("cloud_security_monitor")
@@ -169,6 +170,14 @@ def build_parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Show debug logging.",
     )
+    parser.add_argument(
+        "--sns-topic-arn",
+        help="Optional SNS topic ARN for sending a review notification.",
+    )
+    parser.add_argument(
+        "--aws-region",
+        help="Optional AWS region for SNS publishing.",
+    )
     return parser
 
 
@@ -186,6 +195,10 @@ def main() -> int:
     if args.csv:
         write_csv(findings, args.csv)
         LOGGER.info("Saved CSV findings to %s.", args.csv)
+
+    if args.sns_topic_arn:
+        message_id = publish_findings(args.sns_topic_arn, findings, args.aws_region)
+        LOGGER.info("Published SNS notification with MessageId %s.", message_id)
 
     return 0
 

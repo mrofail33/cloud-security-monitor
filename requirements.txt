@@ -1,3 +1,4 @@
-# Runtime dependencies: none.
+# Runtime dependencies: none for local scanning.
 #
-# The monitor and tests use only the Python standard library.
+# Optional SNS publishing uses boto3 when --sns-topic-arn is provided:
+# boto3>=1.34

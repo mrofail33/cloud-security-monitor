@@ -3,6 +3,7 @@ import unittest
 
 from cloud_security_monitor.detections import detect_event
 from cloud_security_monitor.monitor import format_table, scan
+from cloud_security_monitor.sns import build_sns_message
 
 
 class DetectionTests(unittest.TestCase):
@@ -70,6 +71,14 @@ class DetectionTests(unittest.TestCase):
         self.assertIn("User", table)
         self.assertIn("Flag", table)
         self.assertIn("Security group changed", table)
+
+    def test_sns_message_includes_findings(self):
+        findings = scan(Path("samples/cloudtrail_sample.json"))
+        message = build_sns_message(findings)
+
+        self.assertIn("Cloud security monitor found 6 event(s)", message)
+        self.assertIn("Security group changed", message)
+        self.assertIn("CloudTrail admin action", message)
 
 
 if __name__ == "__main__":
